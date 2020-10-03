@@ -8,8 +8,8 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b) { //eslint-disable-line
-  var totalSum = a + b;
+function sum(a, b, c = 0) { //eslint-disable-line
+  var totalSum = a + b + c;
   var string = 'The sum of ' + a + ' and ' + b + ' is ' + totalSum + '.';
   return [totalSum, string];
 }
@@ -27,10 +27,11 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
-  var totalMultiply = a * b;
+function multiply(a, b, c = 1 ) { //eslint-disable-line
+  var totalMultiply = a * b * c;
   var string = 'The product of ' + a + ' and ' + b + ' is ' + totalMultiply + '.';
   return [totalMultiply, string];
+  
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -51,11 +52,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var addNumber = sum(a, b, c)[0];
+  var multiplyNumber = multiply(a, b, c)[0];
+  var string1 = a + ' and ' + b + ' and ' + c + ' sum to ' + addNumber + '.';
+  var string2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyNumber + '.';
+  console.log(addNumber);
+  console.log(multiplyNumber);
+  return [addNumber, multiplyNumber, string1, string2];
 
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
